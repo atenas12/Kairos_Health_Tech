@@ -136,8 +136,8 @@ Kairos_Health_Tech/
 - [x] Planejamento das páginas institucionais.
 - [x] Planejamento das telas administrativas.
 - [x] Estrutura inicial do projeto.
-- [ ] Desenvolvimento e refinamento dos wireframes.
-- [ ] Modelagem do banco de dados.
+- [x] Desenvolvimento e refinamento dos wireframes.
+- [x] Modelagem do banco de dados.
 - [ ] Implementação do frontend.
 - [ ] Desenvolvimento do backend com Java e Spring Boot.
 - [ ] Integração frontend, API e banco de dados.
