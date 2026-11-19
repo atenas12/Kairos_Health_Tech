@@ -1,0 +1,1177 @@
+/* ==================================================
+   IMPORTAÇÃO DA FONTE
+================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* ==================================================
+   CONFIGURAÇÕES GERAIS
+================================================== */
+
+:root {
+    --azul_escuro: #07344a;
+    --azul_medio: #1d5266;
+
+    --verde: #39b6a4;
+    --verde_hover: #2fa493;
+    --verde_claro: #edf9f7;
+    --verde_destaque: #d7f4ee;
+
+    --texto: #263d46;
+    --texto_claro: #687b82;
+
+    --branco: #ffffff;
+    --fundo: #ffffff;
+    --fundo_suave: #f5f9f8;
+
+    --borda: #e2efec;
+
+    --raio_botao: 20px;
+    --raio_card: 18px;
+}
+
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    color: var(--texto);
+    background: var(--fundo);
+
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ==================================================
+   CABEÇALHO
+================================================== */
+
+.cabecalho {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+
+    background: var(--branco);
+
+    border-bottom: 1px solid rgba(18, 54, 74, 0.04);
+}
+
+
+.cabecalho_conteudo {
+    width: min(1160px, 90%);
+    min-height: 76px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+}
+
+
+/* MARCA */
+
+.marca img {
+    width: 150px;
+    max-height: 52px;
+
+    object-fit: contain;
+}
+
+
+/* MENU */
+
+.menu_principal {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.link_menu {
+    color: var(--azul_escuro);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.link_menu:hover,
+.link_menu.ativo {
+    color: var(--verde);
+}
+
+
+.link_menu:hover {
+    transform: translateY(-1px);
+}
+
+
+/* BOTÃO DE ACESSO */
+
+.botao_acesso {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 8px 17px;
+
+    border: none;
+    border-radius: var(--raio_botao);
+
+    color: var(--branco);
+    background: var(--azul_escuro);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.botao_acesso:hover {
+    background: var(--azul_medio);
+
+    transform: translateY(-1px);
+}
+
+
+.botao_acesso img {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* BOTÃO MENU MOBILE */
+
+.botao_menu {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+/* ==================================================
+   APRESENTAÇÃO
+================================================== */
+
+.apresentacao {
+    width: 100%;
+    min-height: 410px;
+
+    margin: 0;
+
+    padding:
+        50px
+        max(5%, calc((100% - 1160px) / 2));
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    background: var(--verde_claro);
+}
+
+
+.apresentacao_conteudo {
+    max-width: 620px;
+}
+
+
+/* ETIQUETA */
+
+.texto_destaque {
+    width: fit-content;
+
+    margin-bottom: 15px;
+    padding: 6px 17px;
+
+    border-radius: var(--raio_botao);
+
+    color: var(--verde);
+    background: var(--verde_destaque);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* TÍTULO */
+
+.apresentacao h1 {
+    max-width: 570px;
+
+    color: var(--azul_escuro);
+
+    font-size: clamp(34px, 4vw, 49px);
+    line-height: 1.1;
+
+    letter-spacing: -1.2px;
+}
+
+
+.apresentacao h1 span {
+    color: var(--verde);
+}
+
+
+/* TEXTO DA APRESENTAÇÃO */
+
+.texto_apresentacao {
+    max-width: 570px;
+
+    margin-top: 18px;
+
+    color: var(--texto_claro);
+
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+
+/* BOTÃO PRINCIPAL */
+
+.botao_principal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 38px;
+
+    margin-top: 25px;
+    padding: 9px 22px;
+
+    border: none;
+    border-radius: var(--raio_botao);
+
+    color: var(--branco);
+    background: var(--verde);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.botao_principal:hover {
+    background: var(--verde_hover);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(57, 182, 164, 0.18);
+}
+
+
+/* ==================================================
+   IMAGEM DA APRESENTAÇÃO
+================================================== */
+
+.apresentacao_imagem {
+    position: relative;
+
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* HALO ATRÁS DA FOTO */
+
+.apresentacao_imagem::before {
+    content: "";
+
+    position: absolute;
+    z-index: 1;
+
+    width: 365px;
+    height: 365px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(84, 183, 168, 0.28) 0%,
+            rgba(84, 183, 168, 0.12) 48%,
+            rgba(84, 183, 168, 0) 72%
+        );
+}
+
+
+/* FOTO PRINCIPAL */
+
+.apresentacao_imagem img {
+    position: relative;
+    z-index: 2;
+
+    width: 310px;
+    height: 310px;
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+    object-position: center center;
+
+    box-shadow: 0 12px 30px rgba(57, 182, 164, 0.18);
+}
+
+
+/* ==================================================
+   ESSÊNCIA E PRINCÍPIOS
+================================================== */
+
+.essencia {
+    padding:
+        70px
+        max(5%, calc((100% - 1160px) / 2))
+        75px;
+
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+
+    column-gap: 65px;
+    row-gap: 35px;
+
+    align-items: start;
+
+    background: var(--branco);
+}
+
+
+/* ==================================================
+   TEXTO DA ESSÊNCIA
+================================================== */
+
+.essencia_texto {
+    padding-top: 5px;
+}
+
+
+.essencia_texto .texto_destaque {
+    padding: 0;
+
+    color: var(--azul_medio);
+    background: transparent;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+}
+
+
+.essencia_texto h2 {
+    max-width: 440px;
+
+    color: var(--azul_escuro);
+
+    font-size: clamp(29px, 3vw, 38px);
+    line-height: 1.15;
+
+    letter-spacing: -0.7px;
+}
+
+
+.essencia_texto h2 span {
+    color: var(--verde);
+}
+
+
+.essencia_texto p:not(.texto_destaque) {
+    max-width: 450px;
+
+    margin-top: 17px;
+
+    color: var(--texto_claro);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+   PRINCÍPIOS / VALORES
+================================================== */
+
+.principios {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 22px;
+    row-gap: 18px;
+
+    align-items: stretch;
+}
+
+
+/* CARD DE PRINCÍPIO */
+
+.principio {
+    min-width: 0;
+    min-height: 118px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    border-radius: var(--raio_card);
+
+    background: transparent;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* MISSÃO E VISÃO */
+
+.principio:nth-child(1),
+.principio:nth-child(2) {
+    background: var(--fundo_suave);
+}
+
+
+.principio:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   ÍCONES DOS PRINCÍPIOS
+================================================== */
+
+.principio_icone,
+.chamada_icone {
+    flex: 0 0 52px;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--verde_destaque);
+}
+
+
+.principio_icone img,
+.chamada_icone img {
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
+}
+
+
+/* ==================================================
+   TEXTO DOS PRINCÍPIOS
+================================================== */
+
+.principio > div:not(.principio_icone) {
+    flex: 1;
+    min-width: 0;
+}
+
+
+.principio h3 {
+    margin: 2px 0 5px;
+
+    color: var(--azul_medio);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+.principio p {
+    max-width: 220px;
+
+    color: var(--texto_claro);
+
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+
+/* ==================================================
+   CHAMADA DA SOLUÇÃO
+================================================== */
+
+.chamada_proposito {
+    grid-column: 1 / -1;
+
+    width: 82%;
+    max-width: 900px;
+
+    margin: 5px auto 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 13px 18px;
+
+    border: 2px solid var(--verde);
+    border-radius: var(--raio_card);
+
+    background: var(--branco);
+}
+
+
+/* ÍCONE DA CHAMADA */
+
+.chamada_icone {
+    flex: 0 0 45px;
+
+    width: 45px;
+    height: 45px;
+}
+
+
+.chamada_icone img {
+    width: 22px;
+    height: 22px;
+}
+
+
+/* TEXTO */
+
+.chamada_texto {
+    flex: 1;
+    min-width: 0;
+}
+
+
+.chamada_texto h3 {
+    color: var(--azul_medio);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.chamada_texto p {
+    margin-top: 1px;
+
+    color: var(--texto_claro);
+
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   BOTÃO SECUNDÁRIO
+================================================== */
+
+.botao_secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 34px;
+
+    padding: 7px 18px;
+
+    border: 1px solid var(--verde);
+    border-radius: var(--raio_botao);
+
+    color: var(--verde);
+    background: transparent;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.botao_secundario:hover {
+    color: var(--branco);
+    background: var(--verde);
+
+    transform: translateY(-1px);
+}
+
+
+.botao_secundario img {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* ==================================================
+   RODAPÉ
+================================================== */
+
+.rodape {
+    padding: 35px 0 0;
+
+    color: var(--branco);
+    background: var(--azul_escuro);
+}
+
+
+.rodape_conteudo {
+    width: min(1160px, 90%);
+
+    margin: 0 auto;
+    padding-bottom: 30px;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    align-items: start;
+
+    gap: 50px;
+}
+
+
+/* MARCA */
+
+.rodape_marca img {
+    width: 140px;
+    max-height: 55px;
+
+    object-fit: contain;
+    object-position: left center;
+}
+
+
+.rodape_marca p {
+    margin-top: 12px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 10px;
+}
+
+
+/* LINKS E CONTATO */
+
+.rodape_links,
+.rodape_contato {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 7px;
+}
+
+
+.rodape_links h2,
+.rodape_contato h2 {
+    margin-bottom: 5px;
+
+    color: var(--branco);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+.rodape_links a,
+.rodape_contato > a {
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 10px;
+
+    transition: color 0.2s ease;
+}
+
+
+.rodape_links a:hover,
+.rodape_contato > a:hover {
+    color: var(--verde);
+}
+
+
+/* ==================================================
+   REDES SOCIAIS
+================================================== */
+
+.redes_sociais {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 7px;
+}
+
+
+.redes_sociais img {
+    width: 18px;
+    height: 18px;
+
+    object-fit: contain;
+}
+
+
+/* ==================================================
+   BASE DO RODAPÉ
+================================================== */
+
+.rodape_base {
+    padding: 14px 5%;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+
+    text-align: center;
+}
+
+
+.rodape_base p {
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 9px;
+}
+
+
+/* ==================================================
+   TABLETS
+================================================== */
+
+@media (max-width: 900px) {
+
+    /* CABEÇALHO */
+
+    .cabecalho_conteudo {
+        min-height: 72px;
+    }
+
+
+    /* BOTÃO HAMBÚRGUER */
+
+    .botao_menu {
+        display: flex;
+
+        width: 38px;
+        height: 38px;
+
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 6px;
+    }
+
+
+    .botao_menu span {
+        width: 24px;
+        height: 2px;
+
+        margin: 0 auto;
+
+        background: var(--azul_escuro);
+    }
+
+
+    /* MENU MOBILE */
+
+    .menu_principal {
+        position: absolute;
+
+        top: 72px;
+        right: 0;
+        left: 0;
+
+        display: none;
+
+        padding: 24px 5%;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 18px;
+
+        background: var(--branco);
+
+        border-top: 1px solid var(--borda);
+
+        box-shadow: 0 12px 25px rgba(18, 54, 74, 0.08);
+    }
+
+
+    .menu_principal.aberto {
+        display: flex;
+    }
+
+
+    .botao_acesso {
+        align-self: flex-start;
+    }
+
+
+    /* APRESENTAÇÃO */
+
+    .apresentacao {
+        grid-template-columns: 1fr 0.8fr;
+
+        gap: 35px;
+    }
+
+
+    .apresentacao_imagem {
+        min-height: 300px;
+    }
+
+
+    .apresentacao_imagem img {
+        width: 270px;
+        height: 270px;
+    }
+
+
+    .apresentacao_imagem::before {
+        width: 300px;
+        height: 300px;
+    }
+
+
+    /* ESSÊNCIA */
+
+    .essencia {
+        grid-template-columns: 0.9fr 1.1fr;
+
+        column-gap: 35px;
+    }
+
+
+    /* PRINCÍPIOS */
+
+    .principios {
+        column-gap: 12px;
+        row-gap: 12px;
+    }
+
+
+    .principio {
+        min-height: 110px;
+
+        padding: 14px;
+
+        gap: 12px;
+    }
+
+
+    .principio_icone,
+    .chamada_icone {
+        flex-basis: 46px;
+
+        width: 46px;
+        height: 46px;
+    }
+
+
+    .principio_icone img,
+    .chamada_icone img {
+        width: 22px;
+        height: 22px;
+    }
+
+
+    /* CHAMADA */
+
+    .chamada_proposito {
+        width: 90%;
+    }
+}
+
+
+/* ==================================================
+   CELULARES
+================================================== */
+
+@media (max-width: 650px) {
+
+    /* ==================================================
+       APRESENTAÇÃO
+    ================================================== */
+
+    .apresentacao {
+        padding-top: 45px;
+        padding-bottom: 50px;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .apresentacao_conteudo {
+        order: 1;
+    }
+
+
+    .apresentacao_imagem {
+        order: 2;
+
+        min-height: 285px;
+    }
+
+
+    .apresentacao h1 {
+        font-size: 35px;
+    }
+
+
+    .apresentacao_imagem img {
+        width: 260px;
+        height: 260px;
+
+        object-position: center center;
+    }
+
+
+    .apresentacao_imagem::before {
+        width: 290px;
+        height: 290px;
+    }
+
+
+    /* ==================================================
+       ESSÊNCIA
+    ================================================== */
+
+    .essencia {
+        padding: 55px 5% 60px;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .essencia_texto {
+        padding-top: 0;
+    }
+
+
+    .essencia_texto h2 {
+        max-width: 500px;
+    }
+
+
+    .essencia_texto p:not(.texto_destaque) {
+        max-width: 550px;
+    }
+
+
+    /* ==================================================
+       PRINCÍPIOS
+    ================================================== */
+
+    .principios {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .principio {
+        min-height: auto;
+
+        padding: 18px;
+
+        background: var(--fundo_suave);
+    }
+
+
+    .principio:nth-child(1),
+    .principio:nth-child(2),
+    .principio:nth-child(3),
+    .principio:nth-child(4),
+    .principio:nth-child(5) {
+        background: var(--fundo_suave);
+    }
+
+
+    .principio p {
+        max-width: none;
+    }
+
+
+    /* ==================================================
+       CHAMADA
+    ================================================== */
+
+    .chamada_proposito {
+        width: 100%;
+
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        padding: 18px;
+    }
+
+
+    .chamada_texto {
+        flex-basis: calc(100% - 75px);
+    }
+
+
+    .botao_secundario {
+        margin-left: 70px;
+    }
+
+
+    /* ==================================================
+       RODAPÉ
+    ================================================== */
+
+    .rodape_conteudo {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 30px 20px;
+    }
+
+
+    .rodape_marca {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* ==================================================
+   CELULARES PEQUENOS
+================================================== */
+
+@media (max-width: 400px) {
+
+    /* APRESENTAÇÃO */
+
+    .apresentacao h1 {
+        font-size: 31px;
+    }
+
+
+    .apresentacao_imagem {
+        min-height: 260px;
+    }
+
+
+    .apresentacao_imagem img {
+        width: 235px;
+        height: 235px;
+    }
+
+
+    .apresentacao_imagem::before {
+        width: 260px;
+        height: 260px;
+    }
+
+
+    /* ESSÊNCIA */
+
+    .essencia_texto h2 {
+        font-size: 29px;
+    }
+
+
+    /* CHAMADA */
+
+    .chamada_proposito {
+        display: grid;
+
+        grid-template-columns: 52px 1fr;
+
+        gap: 12px;
+    }
+
+
+    .botao_secundario {
+        grid-column: 1 / -1;
+
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+
+    /* RODAPÉ */
+
+    .rodape_conteudo {
+        grid-template-columns: 1fr;
+    }
+
+
+    .rodape_marca {
+        grid-column: auto;
+    }
+}
