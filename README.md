@@ -138,7 +138,7 @@ Kairos_Health_Tech/
 - [x] Estrutura inicial do projeto.
 - [x] Desenvolvimento e refinamento dos wireframes.
 - [x] Modelagem do banco de dados.
-- [ ] Implementação do frontend.
+- [x] Implementação do frontend.
 - [ ] Desenvolvimento do backend com Java e Spring Boot.
 - [ ] Integração frontend, API e banco de dados.
 - [ ] Testes e documentação técnica.
