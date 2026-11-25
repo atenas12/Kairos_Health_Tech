@@ -1,10 +1,13 @@
-// MENU PARA TELAS MENORES
-const botao_menu = document.querySelector("#botao_menu");
-const menu_principal = document.querySelector("#menu_principal");
+/* ==========================
+   MENU RESPONSIVO
+========================== */
 
-if (botao_menu && menu_principal) {
+const botao_menu = document.querySelector(".botao_menu");
+const menu_navegacao = document.querySelector(".menu_navegacao");
+
+if (botao_menu && menu_navegacao) {
     botao_menu.addEventListener("click", function () {
-        const menu_aberto = menu_principal.classList.toggle("aberto");
+        const menu_aberto = menu_navegacao.classList.toggle("aberto");
 
         botao_menu.setAttribute("aria-expanded", menu_aberto);
         botao_menu.setAttribute(
@@ -13,21 +16,32 @@ if (botao_menu && menu_principal) {
         );
     });
 
-    const links_menu = menu_principal.querySelectorAll("a");
-
-    links_menu.forEach(function (link) {
+    menu_navegacao.querySelectorAll("a").forEach(function (link) {
         link.addEventListener("click", function () {
-            menu_principal.classList.remove("aberto");
+            menu_navegacao.classList.remove("aberto");
             botao_menu.setAttribute("aria-expanded", "false");
             botao_menu.setAttribute("aria-label", "Abrir menu");
         });
     });
 }
 
-// ANO ATUAL NO RODAPÉ
-const ano_atual = document.querySelector("#ano_atual");
+/* ==========================
+   FORMULÁRIO DE CONTATO
+========================== */
 
-if (ano_atual) {
-    ano_atual.textContent = new Date().getFullYear();
+const formulario_contato = document.querySelector("#formulario_contato");
+const mensagem_formulario = document.querySelector("#mensagem_formulario");
+
+if (formulario_contato && mensagem_formulario) {
+    formulario_contato.addEventListener("submit", function (evento) {
+        evento.preventDefault();
+
+        if (!formulario_contato.checkValidity()) {
+            formulario_contato.reportValidity();
+            return;
+        }
+
+        mensagem_formulario.textContent =
+            "Os campos foram validados. O envio real será habilitado após a integração com o serviço de e-mail.";
+    });
 }
-
